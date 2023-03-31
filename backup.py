@@ -1,5 +1,7 @@
 import json
 
+from helpers.friends import get_friends
+
 class BackupCord:
     def __init__(self, account_authorization) -> None:
         self.token: str = account_authorization
@@ -7,7 +9,7 @@ class BackupCord:
         print(self.token)
         
     def backup_friends(self) -> bool:
-        print("hello world")
+        return get_friends(self.token)
 
 if __name__ == "__main__":
     try:
