@@ -6,7 +6,7 @@ httpx_client: object = httpx.Client()
 base_url: str = "https://discord.com/api/v9"
 
 def get_friends(authorization_token: str) -> bool:
-    create_dir("backup"); create_file("friends")
+    create_dir("backup"); create_file("backup", "friends")
     
     headers = {
         "Authorization": authorization_token, 
@@ -22,7 +22,6 @@ def get_friends(authorization_token: str) -> bool:
                 user_discriminator: int = user["user"]["discriminator"]
                 
                 add_user("backup", "friends", user_username, user_discriminator, user_id)
-                return True
             else:
                 pass
     else:
