@@ -5,9 +5,7 @@ from helpers.friends import get_friends
 class BackupCord:
     def __init__(self, account_authorization) -> None:
         self.token: str = account_authorization
-        
-        print(self.token)
-        
+                
     def backup_friends(self) -> bool:
         return get_friends(self.token)
 
