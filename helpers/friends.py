@@ -1,9 +1,13 @@
 import httpx 
 
+from helpers.files import create_dir, create_file
+
 httpx_client: object = httpx.Client()
 base_url: str = "https://discord.com/api/v9"
 
 def get_friends(authorization_token: str) -> bool:
+    create_dir("backup");create_file("friends")
+    
     headers = {
         "Authorization": authorization_token, 
         "Content-Type": "application/json"
