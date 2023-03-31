@@ -17,3 +17,8 @@ def create_file(dir_name: str, file_name: str) -> bool:
             return True
     else:
         return False
+
+def add_user(dir_name, file_name, username: str, user_discriminator: str, user_id: int):
+    with open(f"./{dir_name}/{file_name}.txt", 'a') as f:
+        data = {"user_id": user_id, "username": username, "user_discriminator": user_discriminator}
+        f.write("\n" + data);f.close()
